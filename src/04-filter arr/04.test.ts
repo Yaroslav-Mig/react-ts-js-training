@@ -114,6 +114,8 @@ test('get only completed tasks', () => {
   expect(completedTasks.length).toBe(2);
   expect(completedTasks[0].name).toBe('Milk');
   expect(completedTasks[1].name).toBe('Sugar');
+  expect(completedTasks[0].status).toBeTruthy();
+  expect(completedTasks[1].status).toBeTruthy();
 });
 
 test('get only uncompleted tasks', () => {
@@ -128,6 +130,8 @@ test('get only uncompleted tasks', () => {
   expect(completedTasks.length).toBe(2);
   expect(completedTasks[0].id).toBe(1);
   expect(completedTasks[1].id).toBe(3);
+  expect(completedTasks[0].status).toBeFalsy();
+  expect(completedTasks[1].status).toBeFalsy();
 });
 
 test('filter array content based on search criteria', () => {
@@ -137,10 +141,10 @@ test('filter array content based on search criteria', () => {
   const filterFruits2 = filterItems(fruits, 'an');
 
   expect(filterFruits.length).toBe(2);
-	expect(filterFruits2.length).toBe(3);
-	expect(filterFruits[0]).toBe('apple');
-	expect(filterFruits[1]).toBe('grapes');
-	expect(filterFruits2[0]).toBe('banana');
-	expect(filterFruits2[1]).toBe('mango');
-	expect(filterFruits2[2]).toBe('orange');
+  expect(filterFruits2.length).toBe(3);
+  expect(filterFruits[0]).toBe('apple');
+  expect(filterFruits[1]).toBe('grapes');
+  expect(filterFruits2[0]).toBe('banana');
+  expect(filterFruits2[1]).toBe('mango');
+  expect(filterFruits2[2]).toBe('orange');
 });

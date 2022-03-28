@@ -1,5 +1,12 @@
 import { CityType } from '../02-object/02';
-import { ManType, createGreetingMessage, getStreetNameBuildings, getStreetNameHouses, createMessages } from './05';
+import {
+  ManType,
+  dimychTransformator,
+  createGreetingMessage,
+  getStreetNameBuildings,
+  getStreetNameHouses,
+  createMessages,
+} from './05';
 
 let people: ManType[];
 let city: CityType;
@@ -76,6 +83,16 @@ beforeEach(() => {
     citizensNumber: 100000,
   };
 });
+
+test('transform people', () => {
+  const newDeveloper = people.map(dimychTransformator);
+
+  expect(newDeveloper[0].stack).toStrictEqual(['css', 'html', 'js', 'tdd', 'react']);
+  expect(newDeveloper[0].stack.length).toBe(5);
+  expect(newDeveloper[0].firstName).toBe('Andrew');
+  expect(newDeveloper[0].lastName).toBe('Ivanov');
+});
+
 test('should get greeting message', () => {
   const message = createGreetingMessage(people);
 
@@ -103,10 +120,10 @@ test('list of street name of houses', () => {
 });
 
 test('create greeting messages for streets', () => {
-	let messages = createMessages(city.houses);
+  let messages = createMessages(city.houses);
 
-	expect(messages.length).toBe(3);
-	expect(messages[0]).toBe('Hello guys from White street');
+  expect(messages.length).toBe(3);
+  expect(messages[0]).toBe('Hello guys from White street');
   expect(messages[1]).toBe('Hello guys from Black street');
   expect(messages[2]).toBe('Hello guys from Pink street');
-})
+});

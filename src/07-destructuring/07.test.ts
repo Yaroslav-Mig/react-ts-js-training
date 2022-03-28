@@ -20,7 +20,7 @@ test('test of destructuring object', () => {
   // const name = props.name;
   // const lessons = props.lessons;
 
-  const {	
+  const {
     age,
     name,
     lessons,

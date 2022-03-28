@@ -11,8 +11,8 @@ const people: ManType[] = [
   { name: 'Dmitry Sidorov', age: 18 },
 ];
 
-const dimychTransformator = (man: ManType) => ({
-  stack: ['css', 'html', 'js', 'tdd', 'react'],
+export const dimychTransformator = (man: ManType) => ({
+	stack: ['css', 'html', 'js', 'tdd', 'react'],
   firstName: man.name.split(' ')[0],
   lastName: man.name.split(' ')[1],
 });

@@ -1,17 +1,16 @@
 import React, { ChangeEvent, MouseEvent } from 'react';
 
 const callback = (): void => {
-  alert('hey');
+  console.log('hey');
 };
-// window.setTimeout(callback, 1000);
+window.setTimeout(callback, 1000);
 
 export const User = () => {
   const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
-    debugger;
-    alert(event.currentTarget.name);
+    console.log(event.currentTarget.name);
   };
   const saveUser = () => {
-    alert('User saved');
+    console.log('User saved');
   };
   const onNameChanged = () => {
     console.log('name changed');
@@ -25,7 +24,7 @@ export const User = () => {
 
   return (
     <div>
-      <textarea onChange={onNameChanged} tabIndex={2}>
+      <textarea onChange={onNameChanged} tabIndex={2} onBlur={onFocus}>
         Yaroslav
       </textarea>
       <input tabIndex={1} type={'number'} onBlur={onFocus} onChange={onAgeChanged} />

@@ -5,8 +5,8 @@ type CourseType = {
   price: number;
 };
 
-export const predicate = (age: number) => age > 65;
-export const cheapCourseCheck = (course: CourseType) => course.price < 160;
+export const predicate = (age: number): boolean => age > 65;
+export const cheapCourseCheck = (course: CourseType): boolean => course.price < 160;
 
 export function demolishHouses(city: CityType, nameStr: string): void {
   city.houses = city.houses.filter((el) => el.address.street.title !== nameStr);
