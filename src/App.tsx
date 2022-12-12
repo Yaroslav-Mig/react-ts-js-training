@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { splitIntoWord } from './01-tests/01';
+
 import { User } from './06-callback/06';
-import { ManComponent } from './07-destructuring/07';
+import DeepCopy from './10-deep clone obj/10_1';
 
 
 function App() {
 	return <div className='App'>
 		<User />
-		{/* <ManComponent/> */}
+		<DeepCopy/>
 	</div>;
 }
 

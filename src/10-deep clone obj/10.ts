@@ -79,7 +79,7 @@ export const removeBook = (obj: UserBooksType, book: string): UserBooksType => (
 });
 
 export const addJob = (obj: UserJobsType, job: string): UserJobsType => {
-  const lastItem = obj.jobs.at(-1);
+  const lastItem = obj.jobs[obj.jobs.length - 1] as UserJobType;
   let newID: number = 1;
 
   if (lastItem && typeof lastItem.id === 'number') {
